@@ -1,0 +1,29 @@
+#defining a function plusMinus with the arguments (list(arr), number of values)
+def plusMinus(arr,n):
+    #initializing count_1,count_2,count_3 to zero
+    count_1=0
+    count_2=0
+    count_3=0
+    #setting up a for loop to look into the elements in the list
+    for i in range(0,n):
+        # Checking for the values that greater than 0, less than 0 and =0 and increment respective count value 
+        if(int(arr[i])>0):
+            count_1=count_1+1
+        elif(int(arr[i])<0):
+            count_2=count_2+1
+        else:
+            count_3=count_3+1
+    # finding the ratio by diving the repective count value by the total number of values 'n'
+    r_count_1 = count_1/n
+    r_count_2 = count_2/n
+    r_count_3 = count_3/n
+    return r_count_1,r_count_2,r_count_3
+# getting the input n for total number of values and a list input of values
+n = int(input())
+arr = list(input().split())
+#calling the function plusMinus with the input arguments arr and n
+result = plusMinus(arr,n)
+# setting up one more for loop to get the values from the list
+for i in range (0,3):
+    #printing the values with 6 decimal point precision
+    print ('%.6f'%result[i])
